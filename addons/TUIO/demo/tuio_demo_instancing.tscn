@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://5p4fgbjkwkyb"]
+
+[ext_resource type="Script" uid="uid://cbjksts23rorq" path="res://addons/TUIO/scripts/TUIOServer.gd" id="1_bubkc"]
+[ext_resource type="Script" uid="uid://dlq3smsq1xbyo" path="res://addons/TUIO/scripts/TUIOCursorHandler.gd" id="2_j01h6"]
+[ext_resource type="PackedScene" uid="uid://bo24miki1ksw8" path="res://addons/TUIO/demo/Cursor.tscn" id="2_ppj8l"]
+[ext_resource type="Script" uid="uid://ienj6txwp5ok" path="res://addons/TUIO/scripts/TUIOObjectHandler.gd" id="3_keul0"]
+[ext_resource type="PackedScene" uid="uid://bc3e8gh2r7vbx" path="res://addons/TUIO/demo/Object.tscn" id="4_s1hus"]
+
+[node name="TuioDemoInstancing" type="Node2D"]
+
+[node name="TUIO_Server" type="Node2D" parent="."]
+script = ExtResource("1_bubkc")
+
+[node name="TUIO_Cursors" type="Node2D" parent="."]
+script = ExtResource("2_j01h6")
+cursor_scene = ExtResource("2_ppj8l")
+
+[node name="TUIO_Objects" type="Node2D" parent="."]
+script = ExtResource("3_keul0")
+object_scene = ExtResource("4_s1hus")
+
+[connection signal="tuio_cursor_event" from="TUIO_Server" to="TUIO_Cursors" method="_on_tuio_server_tuio_cursor_event"]
+[connection signal="tuio_object_event" from="TUIO_Server" to="TUIO_Objects" method="_on_tuio_server_tuio_object_event"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc3e8gh2r7vbx"]
+
+[ext_resource type="Script" uid="uid://cdo60hld4a4iu" path="res://addons/TUIO/scripts/Object_Scene.gd" id="1_67dvx"]
+
+[node name="Object" type="Node2D"]
+script = ExtResource("1_67dvx")
+rect_color = Color(0.229355, 0.615622, 0.470096, 1)
+
+[node name="ID_Label" type="Label" parent="."]
+offset_left = -9.0
+offset_top = -12.0
+offset_right = 10.0
+offset_bottom = 11.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
